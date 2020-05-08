@@ -18,6 +18,7 @@ ctx.fillStyle = "white";
 ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 ctx.strokeStyle = INITIAL_COLOR;
 ctx.fillStyle = INITIAL_COLOR;
+range.style.backgroundColor = INITIAL_COLOR;
 ctx.lineWidth = 2.5;
 
 let painting = false;
@@ -85,6 +86,7 @@ function handleSaveClick(){
 
 function handleColorSelect(event){
     selectColor.click();
+    range.style.backgroundColor = ctx.strokeStyle;
 }
 
 function handleConveyColor(event){
