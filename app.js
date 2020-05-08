@@ -47,6 +47,7 @@ function handleColorClick(event){
     const color = event.target.style.backgroundColor;
     ctx.strokeStyle = color;
     ctx.fillStyle = color; 
+    range.style.backgroundColor = color;
 }
 
 function handleRangeChange(event){
@@ -90,6 +91,7 @@ function handleConveyColor(event){
     userOwnColor.style.backgroundColor = event.target.value;
     ctx.strokeStyle = event.target.value;
     ctx.fillStyle = event.target.value;
+    range.style.backgroundColor = event.target.value;
 }
 
 if(canvas){

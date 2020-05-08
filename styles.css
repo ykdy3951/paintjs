@@ -60,5 +60,41 @@ body{
 }
 
 .controls .controls__range{
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 10px;
+    align-items: center;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 150%;
+}
+
+input[type=range]:focus {
+    outline: none; 
+}
+
+input[type=range]::-webkit-slider-thumb {
+    border: none;
+    height: 32px;
+    width: 32px;
+    background: goldenrod;
+    background: url('./brush.png') no-repeat;
+    margin-top: -15px;
+    border-radius: 0 !important;
+    cursor: pointer;
+    -webkit-appearance: none;
+    /* margin-top: -5px; chrome의 경우 margin-top값을 부여해야합니다. */
+}
+
+input[type=range]+.thumb {
+    background-color: #FF8A80 !important;
+}
+
+input[type=range]+.thumb.active{
+  top: -35px !important;
 }
