@@ -4,6 +4,8 @@ const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
+const userOwnColor = document.getElementById("jsSelect");
+const selectColor = document.getElementById("selectColor");
 
 const INITIAL_COLOR = "#2c2c2c";
 const CANVAS_SIZE = 700;
@@ -80,6 +82,16 @@ function handleSaveClick(){
     link.click();
 }
 
+function handleColorSelect(event){
+    selectColor.click();
+}
+
+function handleConveyColor(event){
+    userOwnColor.style.backgroundColor = event.target.value;
+    ctx.strokeStyle = event.target.value;
+    ctx.fillStyle = event.target.value;
+}
+
 if(canvas){
     canvas.addEventListener("mousemove", onMouseMove);
     canvas.addEventListener("mousedown", startPainting);
@@ -91,6 +103,8 @@ if(canvas){
 
 Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
 
+userOwnColor.addEventListener("dblclick", handleColorSelect);
+
 if(range){
     range.addEventListener("input", handleRangeChange);
 }
@@ -101,4 +115,8 @@ if(mode){
 
 if(saveBtn){
     saveBtn.addEventListener("click", handleSaveClick);
+}
+
+if(selectColor){
+    selectColor.addEventListener("input", handleConveyColor);
 }
